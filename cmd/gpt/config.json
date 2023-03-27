@@ -1,0 +1,4 @@
+{
+  "openai_key": "<you-openai-secret-key>",
+  "openai_max_concurrency_limit": 100
+}
