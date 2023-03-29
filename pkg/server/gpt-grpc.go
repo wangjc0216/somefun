@@ -56,8 +56,3 @@ func (gs *gptService) GenerateImage(ctx context.Context, imageReq *gpt.ImageRequ
 	}
 	return &gpt.ImageResponse{Message: imageUrl}, nil
 }
-
-//type GptServiceServer interface {
-//	Chat(GptService_ChatServer) error
-//	GenerateImage(context.Context, *ImageRequest) (*ImageResponse, error)
-//}
