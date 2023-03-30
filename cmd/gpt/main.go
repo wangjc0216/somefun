@@ -28,6 +28,7 @@ func main() {
 		http.HandleFunc("/chat", server.ChatHandle)
 		http.HandleFunc("/generateImage", server.GenerateImage)
 		http.HandleFunc("/hallo", server.HalloHandler().ServeHTTP)
+		http.HandleFunc("/fail", server.FailHandler().ServeHTTP)
 		http.ListenAndServe(halloPort, nil)
 	}()
 

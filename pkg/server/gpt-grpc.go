@@ -31,6 +31,10 @@ func (gs *gptService) Chat(chatServer gpt.GptService_ChatServer) error {
 		log.Info("chatRequest is:", chatRequest)
 
 		chatId, message, err := openai.GetClient().Chat(context.TODO(), chatRequest.Message, int(chatRequest.ChatId))
+		if err != nil {
+			log.Error("Chat error:", err)
+			continue
+		}
 
 		err = chatServer.Send(&gpt.ChatResponse{
 			ChatId:  int64(chatId),

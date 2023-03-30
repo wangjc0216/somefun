@@ -12,3 +12,14 @@ func (h *halloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func HalloHandler() http.Handler {
 	return &halloHandler{}
 }
+
+type failHandler struct{}
+
+func (h *failHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Write([]byte("fail"))
+
+}
+func FailHandler() http.Handler {
+	return &failHandler{}
+}
